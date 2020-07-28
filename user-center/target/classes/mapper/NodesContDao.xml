@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.amay.cloud.dao.NodesContDao">
+
+    <resultMap type="com.amay.cloud.entity.NodesCont" id="NodesContMap">
+        <result property="nid" column="nid" jdbcType="INTEGER"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="NodesContMap">
+        select
+          nid, title, content, create_time
+        from yblb_nodes.nodes_cont
+        where nid = #{nid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="NodesContMap">
+        select
+          nid, title, content, create_time
+        from yblb_nodes.nodes_cont
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="NodesContMap">
+        select
+        nid, title, content, create_time
+        from yblb_nodes.nodes_cont
+        <where>
+            <if test="nid != null">
+                and nid = #{nid}
+            </if>
+            <if test="title != null and title != ''">
+                and title = #{title}
+            </if>
+            <if test="content != null and content != ''">
+                and content = #{content}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="nid" useGeneratedKeys="true">
+        insert into yblb_nodes.nodes_cont(title, content, create_time)
+        values (#{title}, #{content}, #{createTime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update yblb_nodes.nodes_cont
+        <set>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="content != null and content != ''">
+                content = #{content},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+        </set>
+        where nid = #{nid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from yblb_nodes.nodes_cont where nid = #{nid}
+    </delete>
+
+</mapper>
