@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.amay.user.dao.ContentDao">
 
-    <resultMap type="com.amay.user.entity.Content" id="ContentMap">
+    <resultMap type="com.amay.cont.entity.Content" id="ContentMap">
         <result property="contId" column="cont_id" jdbcType="INTEGER"/>
         <result property="dialogue" column="dialogue" jdbcType="VARCHAR"/>
         <result property="audio" column="audio" jdbcType="VARCHAR"/>

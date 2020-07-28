@@ -1,6 +1,6 @@
-package com.amay.user.service;
+package com.amay.cont.service;
 
-import com.amay.user.entity.Content;
+import com.amay.cont.entity.Content;
 
 import java.util.List;
 

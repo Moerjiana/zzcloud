@@ -34,7 +34,7 @@
   } ],
   "pkColumn" : null,
   "otherColumn" : null,
-  "savePackageName" : "com.amay.cloud",
-  "savePath" : "./user-center/src/main/java/com/amay/cloud",
-  "saveModelName" : "usercenter"
+  "savePackageName" : "com.amay.user",
+  "savePath" : "./cont-center/src/main/java/com/amay/user",
+  "saveModelName" : "contcenter"
 }

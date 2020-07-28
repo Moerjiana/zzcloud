@@ -1,6 +1,6 @@
-package com.amay.user.dao;
+package com.amay.cont.dao;
 
-import com.amay.user.entity.Content;
+import com.amay.cont.entity.Content;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

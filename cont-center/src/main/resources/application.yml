@@ -1,5 +1,5 @@
 server:
-  port: 9002
+  port: 9001
 
 spring:
   datasource:
@@ -13,8 +13,9 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+        cluster-name: BJ
   application:
-    name: user-center
+    name: cont-center
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Dao.xml

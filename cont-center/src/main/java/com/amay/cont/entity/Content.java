@@ -1,4 +1,4 @@
-package com.amay.user.entity;
+package com.amay.cont.entity;
 
 import java.io.Serializable;
 

@@ -1,7 +1,7 @@
 package com.amay.user.controller;
 
-import com.amay.user.entity.Content;
-import com.amay.user.service.ContentService;
+import com.amay.cont.entity.Content;
+import com.amay.cont.service.ContentService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

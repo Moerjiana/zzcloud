@@ -1,5 +1,5 @@
 server:
-  port: 9001
+  port: 9004
 
 spring:
   datasource:
@@ -13,6 +13,7 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+        cluster-name: NJ
   application:
     name: user-center
 

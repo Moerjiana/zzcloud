@@ -1,8 +1,8 @@
-package com.amay.user.service.impl;
+package com.amay.cont.service.impl;
 
-import com.amay.user.dao.ContentDao;
-import com.amay.user.entity.Content;
-import com.amay.user.service.ContentService;
+import com.amay.cont.dao.ContentDao;
+import com.amay.cont.entity.Content;
+import com.amay.cont.service.ContentService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
