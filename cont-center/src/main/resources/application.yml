@@ -19,3 +19,19 @@ spring:
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Dao.xml
+
+logging:
+  level:
+    com.amay.cont.feign.RemoteUserService: debug
+
+feign:
+  client:
+    config:
+      # 全局配置
+      default:
+        loggerLevel: BASIC
+  #替换feign底层通信为httpclient提高性能
+  httpclient:
+    enabled: true
+    max-connections: 200
+    max-connections-per-route: 50
