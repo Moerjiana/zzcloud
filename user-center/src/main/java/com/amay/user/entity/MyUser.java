@@ -1,5 +1,6 @@
 package com.amay.user.entity;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -8,11 +9,12 @@ import java.io.Serializable;
  * (MyUser)实体类
  *
  * @author makejava
- * @since 2020-07-28 15:54:12
+ * @since 2020-08-03 17:29:51
  */
+@Builder
 @Data
 public class MyUser implements Serializable {
-    private static final long serialVersionUID = -73301964948051248L;
+    private static final long serialVersionUID = 431574755589379945L;
 
     private Integer userId;
 
@@ -20,6 +22,8 @@ public class MyUser implements Serializable {
 
     private String password;
 
-    private Integer loginType;
+    private Object loginType;
+
+    private Integer integral;
 
 }

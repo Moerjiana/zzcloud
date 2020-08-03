@@ -9,7 +9,7 @@ import java.util.List;
  * (MyUser)表数据库访问层
  *
  * @author makejava
- * @since 2020-07-28 15:54:12
+ * @since 2020-08-03 17:29:53
  */
 public interface MyUserDao {
 

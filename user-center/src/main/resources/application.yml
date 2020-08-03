@@ -19,3 +19,8 @@ spring:
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Dao.xml
+
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: zzcloud-demo1

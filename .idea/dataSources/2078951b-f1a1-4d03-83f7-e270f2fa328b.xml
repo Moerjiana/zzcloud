@@ -68,7 +68,7 @@
       <Collation>utf8mb4_general_ci</Collation>
     </schema>
     <schema id="22" parent="1" name="yblb_paibian">
-      <Collation>utf8mb4_general_ci</Collation>
+      <Collation>utf8mb4_bin</Collation>
     </schema>
     <schema id="23" parent="1" name="yblb_pay">
       <Collation>utf8mb4_bin</Collation>
@@ -1203,7 +1203,13 @@
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="305" parent="300" name="PRIMARY">
+    <column id="305" parent="300" name="integral">
+      <Position>5</Position>
+      <DataType>int(5)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="306" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>

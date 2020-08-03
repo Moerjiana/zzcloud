@@ -31,10 +31,17 @@
     "shortType" : null,
     "custom" : false,
     "ext" : { }
+  }, {
+    "name" : "integral",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
   } ],
   "pkColumn" : null,
   "otherColumn" : null,
   "savePackageName" : "com.amay.user",
-  "savePath" : "./cont-center/src/main/java/com/amay/user",
-  "saveModelName" : "contcenter"
+  "savePath" : "./user-center/src/main/java/com/amay/user",
+  "saveModelName" : "usercenter"
 }
