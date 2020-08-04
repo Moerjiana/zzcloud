@@ -14,13 +14,25 @@ spring:
       discovery:
         server-addr: localhost:8848
         cluster-name: NJ
+    stream:
+      rocketmq:
+        binder:
+          name-server: localhost:9876
+      bindings:
+        input:
+          consumer:
+            concurrency: 20
+          content-type: application/json
+          destination: stream-test-topic
+          group: test-group1
   application:
     name: user-center
+
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Dao.xml
 
-rocketmq:
-  name-server: localhost:9876
-  producer:
-    group: zzcloud-demo1
+#rocketmq:
+#  name-server: localhost:9876
+#  producer:
+#    group: zzcloud-demo1

@@ -17,6 +17,18 @@ spring:
     sentinel:
       transport:
         dashboard: localhost:8080
+    stream:
+      rocketmq:
+        binder:
+          name-server: 127.0.0.1:9876
+#        bindings:
+#          output:
+#            producer:
+#              group: demo-group
+      bindings:
+        output:
+          content-type: text/plain
+          destination: stream-test-topic
   application:
     name: cont-center
 
@@ -41,7 +53,8 @@ feign:
   sentinel:
     enabled: true
 
-rocketmq:
-  name-server: localhost:9876
-  producer:
-    group: zzcloud-demo1
+#rocketmq:
+#  name-server: localhost:9876
+#  producer:
+#    group: zzcloud-demo1
+
