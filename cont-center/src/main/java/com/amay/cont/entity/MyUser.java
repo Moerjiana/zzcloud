@@ -18,7 +18,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MyUser implements Serializable {
-    private static final long serialVersionUID = 824468046796424421L;
+    private static final long serialVersionUID = 1L;
 
     private Integer userId;
 
@@ -26,6 +26,8 @@ public class MyUser implements Serializable {
 
     private String password;
 
-    private Integer loginType;
+    private Object loginType;
+
+    private Integer integral;
 
 }

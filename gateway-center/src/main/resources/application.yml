@@ -1,0 +1,51 @@
+server:
+  port: 9998
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8849
+        cluster-name: BJ
+    gateway:
+#      #配置自动根据URL从注册中心转发
+#      discovery:
+#        locator:
+#          enabled: true
+      routes:
+        - id: cont-center
+          uri: lb://cont-center
+          order: 9000
+          predicates:
+            - Path=/cont/**
+#          filters:
+#            #限流
+#            - name: RequestRateLimiter
+#              args:
+#                # 令牌桶每秒填充平均速率
+#                redis-rate-limiter.replenishRate: 1
+#                # 令牌桶的上限
+#                redis-rate-limiter.burstCapacity: 2
+#                # 使用SpEL表达式从Spring容器中获取Bean对象
+#                key-resolver: "#{@remoteAddrKeyResolver}"
+  application:
+    name: gateway-center
+  redis:
+    host: pigx-redis
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    org.springframework.cloud.gateway: trace
+
+#ribbon:
+#  rule:
+#    gray-enabled: true
