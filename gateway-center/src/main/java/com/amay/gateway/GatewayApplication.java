@@ -12,9 +12,9 @@ public class GatewayApplication {
         SpringApplication.run(GatewayApplication.class, args);
     }
 
-//    @Bean
-//    KeyResolver remoteAddrKeyResolver() {
-//        System.out.println("remoteAddrKeyResolver ing.....");
-//        return exchange -> Mono.just(exchange.getRequest().getRemoteAddress().getHostName());
-//    }
+    @Bean
+    KeyResolver remoteAddrKeyResolver() {
+        //根据ip限流
+        return exchange -> Mono.just(exchange.getRequest().getRemoteAddress().getHostName());
+    }
 }

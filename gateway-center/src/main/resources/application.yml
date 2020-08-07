@@ -1,5 +1,5 @@
 server:
-  port: 9998
+  port: 9900
 
 spring:
   cloud:
@@ -18,16 +18,16 @@ spring:
           order: 9000
           predicates:
             - Path=/cont/**
-#          filters:
-#            #限流
-#            - name: RequestRateLimiter
-#              args:
-#                # 令牌桶每秒填充平均速率
-#                redis-rate-limiter.replenishRate: 1
-#                # 令牌桶的上限
-#                redis-rate-limiter.burstCapacity: 2
-#                # 使用SpEL表达式从Spring容器中获取Bean对象
-#                key-resolver: "#{@remoteAddrKeyResolver}"
+          filters:
+            #限流
+            - name: RequestRateLimiter
+              args:
+                # 令牌桶每秒填充平均速率
+                redis-rate-limiter.replenishRate: 1
+                # 令牌桶的上限
+                redis-rate-limiter.burstCapacity: 2
+                # 使用SpEL表达式从Spring容器中获取Bean对象
+                key-resolver: "#{@remoteAddrKeyResolver}"
   application:
     name: gateway-center
   redis:
