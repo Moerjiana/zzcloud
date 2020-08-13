@@ -8,10 +8,10 @@ spring:
         server-addr: localhost:8849
         cluster-name: BJ
     gateway:
-#      #配置自动根据URL从注册中心转发
-#      discovery:
-#        locator:
-#          enabled: true
+      #      #配置自动根据URL从注册中心转发
+      #      discovery:
+      #        locator:
+      #          enabled: true
       routes:
         - id: cont-center
           uri: lb://cont-center
@@ -28,6 +28,10 @@ spring:
                 redis-rate-limiter.burstCapacity: 2
                 # 使用SpEL表达式从Spring容器中获取Bean对象
                 key-resolver: "#{@remoteAddrKeyResolver}"
+        - id: user-center
+          uri: lb://user-center
+          predicates:
+            - Path=/user/**
   application:
     name: gateway-center
   redis:

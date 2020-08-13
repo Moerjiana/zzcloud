@@ -6,7 +6,10 @@ import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
 import com.amay.cont.feign.RemoteUserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,19 +20,30 @@ import java.util.List;
 
 @RestController
 @RequestMapping("test")
-@AllArgsConstructor
+//@AllArgsConstructor
 @Slf4j
+@RefreshScope
 public class TestController {
 
-    private final DiscoveryClient discoveryClient;
-    private final RestTemplate restTemplate;
-    private final RemoteUserService remoteUserService;
+    @Autowired
+    private  DiscoveryClient discoveryClient;
+    @Autowired
+    private  RestTemplate restTemplate;
+    @Autowired
+    private  RemoteUserService remoteUserService;
 
     private static String resourceName = "sentinel-test1";
+    @Value("${amay.conf.value}")
+    private String conf;
 
     @GetMapping("/init")
     public Object test() {
         return remoteUserService.selectOne(1);
+    }
+
+    @GetMapping("/config")
+    public String getConfigValue(){
+        return conf;
     }
 
 //    @GetMapping("/init")
